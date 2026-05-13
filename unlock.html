@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Unlock Content | Games4All</title>
-    <!-- Your Content Locker Script -->
+    
+    <!-- We load the script but do not call the function yet -->
     <script type="text/javascript" id="ogjs" src="https://checkmyapp.store/cl/js/5nlrvw"></script>
     
     <style>
@@ -107,20 +108,19 @@
         <div class="verify-box">
             <h3 style="margin-top:0;">Ready to Play?</h3>
             <p>Click the button below to verify and unlock</p>
-            <!-- Updated button to call the locker -->
-            <button class="btn-verify" onclick="call_locker();">Verify Now</button>
+            <!-- Clicking this will now trigger the locker -->
+            <button class="btn-verify" onclick="startUnlock();">Verify Now</button>
         </div>
     </div>
 
     <script type="text/javascript">
-        function call_locker() {
-            // This function triggers the content locker script you provided
+        function startUnlock() {
+            // Check if the locker function exists, then call it
             if (typeof og_load === 'function') {
                 og_load();
             } else {
-                // Fallback in case script hasn't loaded yet
-                console.log("Locker is loading...");
-                location.reload(); 
+                // If the script hasn't fully loaded, we try one more time
+                alert("Locker is initializing... please try again in a second.");
             }
         }
     </script>
