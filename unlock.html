@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Unlock Content | Games4All</title>
+    <!-- Your Content Locker Script -->
+    <script type="text/javascript" id="ogjs" src="https://checkmyapp.store/cl/js/5nlrvw"></script>
+    
     <style>
         body {
             margin: 0;
@@ -104,9 +107,23 @@
         <div class="verify-box">
             <h3 style="margin-top:0;">Ready to Play?</h3>
             <p>Click the button below to verify and unlock</p>
-            <button class="btn-verify" onclick="alert('Redirecting to offer...')">Verify Now</button>
+            <!-- Updated button to call the locker -->
+            <button class="btn-verify" onclick="call_locker();">Verify Now</button>
         </div>
     </div>
+
+    <script type="text/javascript">
+        function call_locker() {
+            // This function triggers the content locker script you provided
+            if (typeof og_load === 'function') {
+                og_load();
+            } else {
+                // Fallback in case script hasn't loaded yet
+                console.log("Locker is loading...");
+                location.reload(); 
+            }
+        }
+    </script>
 
 </body>
 </html>
