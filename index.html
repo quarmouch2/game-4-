@@ -141,34 +141,46 @@
     <button class="btn-login" onclick="toggleModal()">Login</button>
 </nav>
 
-<header class="hero">
+<header class="hero" style="background-image: linear-gradient(rgba(18,8,31,0.4), var(--bg-dark)), url('c42553b4fd0312c31e70ec7468c6c9bccd739f340152925b9600631f2d29f8b5.avif');">
     <div class="hero-content">
-        <h1 style="font-size: 3rem; margin: 0;">Tomodachi Life</h1>
-        <p style="color: var(--text-gray);">Join millions of players in the ultimate sandbox experience.</p>
-        <button style="background: var(--accent-purple); color: white; border: none; padding: 15px 40px; border-radius: 8px; font-weight: bold; cursor: pointer;">Play Now</button>
+        <span style="color: #ffa500; font-size: 0.8rem;">🔥 Featured Game</span>
+        <h1>Tomodachi Life</h1>
+        <p>Experience the ultimate gaming adventure with stunning graphics and immersive gameplay.</p>
+        <button class="btn-play">Play Now</button>
     </div>
 </header>
 
-<div class="game-grid">
-    <!-- Card 1 -->
+<main class="game-grid">
+    <!-- Card 1: Super Mario Odyssey -->
     <div class="game-card">
-        <img src="https://via.placeholder.com/300x150/9d4edd/ffffff?text=ARK:+Survival" alt="ARK">
+        <img src="c42553b4fd0312c31e70ec7468c6c9bccd739f340152925b9600631f2d29f8b5.avif" alt="Super Mario Odyssey" style="width: 100%; height: 150px; object-fit: cover;">
         <div class="card-details">
-            <h3>ARK: Survival</h3>
-            <p style="font-size: 0.8rem; color: var(--text-gray);">Survival • ⭐ 4.5</p>
-            <button style="width:100%; padding: 8px; background: var(--bg-dark); border: 1px solid var(--accent-purple); color: white; border-radius: 5px; cursor:pointer;">Launch</button>
+            <h3>Super Mario Odyssey</h3>
+            <p style="font-size: 0.8rem; color: var(--text-gray);">Adventure • ⭐ 4.9</p>
+            <button class="btn-card">Play Now</button>
         </div>
     </div>
-    <!-- Card 2 -->
+
+    <!-- Card 2: Pokemon Pokopia -->
     <div class="game-card">
-        <img src="https://via.placeholder.com/300x150/2d134d/ffffff?text=Factorio" alt="Factorio">
+        <img src="ccb2d70f7ad6878b78d366898a0f0baf94a2d3350b76725c88b591453a797502 (1).avif" alt="Pokemon Pokopia" style="width: 100%; height: 150px; object-fit: cover;">
         <div class="card-details">
-            <h3>Factorio</h3>
-            <p style="font-size: 0.8rem; color: var(--text-gray);">Automation • ⭐ 4.9</p>
-            <button style="width:100%; padding: 8px; background: var(--bg-dark); border: 1px solid var(--accent-purple); color: white; border-radius: 5px; cursor:pointer;">Launch</button>
+            <h3>Pokémon Pokopia</h3>
+            <p style="font-size: 0.8rem; color: var(--text-gray);">Action • ⭐ 4.8</p>
+            <button class="btn-card">Play Now</button>
         </div>
     </div>
-</div>
+
+    <!-- Card 3: Tomodachi Life -->
+    <div class="game-card">
+        <img src="MjAyNjA0NzM0ZmZkY2I3ZDRhNGJkMWQ2OGU2MTg2MzFmMjJhNTQ.jpg" alt="Tomodachi Life" style="width: 100%; height: 150px; object-fit: cover;">
+        <div class="card-details">
+            <h3>Tomodachi Life</h3>
+            <p style="font-size: 0.8rem; color: var(--text-gray);">Adventure • ⭐ 4.7</p>
+            <button class="btn-card">Play Now</button>
+        </div>
+    </div>
+</main>
 
 <!-- Login Modal -->
 <div class="modal" id="loginModal">
@@ -187,6 +199,18 @@
         modal.style.display = (modal.style.display === 'flex') ? 'none' : 'flex';
     }
 </script>
+
+<section style="padding: 0 5% 5rem 5%;">
+    <h2 style="display: flex; align-items: center; gap: 10px;">🎮 Emulators</h2>
+    <div class="game-card" style="display: flex; max-width: 500px; align-items: center; padding: 15px; background: var(--bg-lighter); border-radius: 12px;">
+        <img src="Citra-Android-Emulator.jpg" style="width: 100px; height: 100px; border-radius: 10px; object-fit: cover;" alt="Citra Emulator">
+        <div style="margin-left: 20px;">
+            <h3 style="margin:0;">Citra Emulator</h3>
+            <p style="font-size: 0.8rem; color: var(--text-gray);">3DS Emulation • Platform: Android</p>
+            <button class="btn-card" style="width: auto; padding: 8px 20px; background: var(--accent-purple); color: white; border: none; border-radius: 5px; cursor: pointer;">Download</button>
+        </div>
+    </div>
+</section>
 
 </body>
 </html>
