@@ -21,7 +21,6 @@
             overflow-x: hidden;
         }
 
-        /* Navigation */
         nav {
             display: flex;
             justify-content: space-between;
@@ -45,7 +44,6 @@
             outline: none;
         }
 
-        /* Hero Section */
         .hero {
             height: 500px;
             background-size: cover;
@@ -56,11 +54,7 @@
             position: relative;
         }
 
-        .hero-content {
-            max-width: 600px;
-            z-index: 2;
-        }
-
+        .hero-content { max-width: 600px; z-index: 2; }
         .hero h1 { font-size: 3.5rem; margin: 10px 0; }
         
         .btn-play {
@@ -73,30 +67,16 @@
             cursor: pointer;
             font-size: 1rem;
             transition: 0.3s;
+            text-decoration: none;
+            display: inline-block;
         }
 
         .btn-play:hover { background: #7b2cbf; transform: scale(1.05); }
 
-        /* Filters */
-        .filters {
-            padding: 2rem 5%;
-            display: flex;
-            gap: 12px;
-            flex-wrap: wrap;
-        }
-
-        .filter-tab {
-            background: var(--bg-lighter);
-            padding: 8px 20px;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-
+        .filters { padding: 2rem 5%; display: flex; gap: 12px; flex-wrap: wrap; }
+        .filter-tab { background: var(--bg-lighter); padding: 8px 20px; border-radius: 20px; font-size: 0.9rem; cursor: pointer; transition: 0.3s; }
         .filter-tab.active, .filter-tab:hover { background: var(--accent-purple); }
 
-        /* Grid */
         .section-title { padding: 0 5%; margin-bottom: 1rem; font-size: 1.5rem; }
 
         .game-grid {
@@ -106,13 +86,7 @@
             padding: 0 5% 3rem 5%;
         }
 
-        .game-card {
-            background: var(--bg-lighter);
-            border-radius: 15px;
-            overflow: hidden;
-            transition: 0.3s;
-        }
-
+        .game-card { background: var(--bg-lighter); border-radius: 15px; overflow: hidden; transition: 0.3s; }
         .game-card:hover { transform: translateY(-10px); }
         .game-card img { width: 100%; height: 200px; object-fit: cover; }
         
@@ -130,23 +104,9 @@
             font-weight: bold;
         }
 
-        /* Emulator Section */
-        .emulator-container {
-            padding: 0 5% 5rem 5%;
-        }
-
-        .emu-card {
-            display: flex;
-            background: var(--bg-lighter);
-            padding: 20px;
-            border-radius: 15px;
-            max-width: 500px;
-            align-items: center;
-        }
-
+        .emu-card { display: flex; background: var(--bg-lighter); padding: 20px; border-radius: 15px; max-width: 500px; align-items: center; margin: 0 5% 5rem 5%; }
         .emu-card img { width: 100px; height: 100px; border-radius: 12px; object-fit: cover; }
         .emu-details { margin-left: 20px; }
-
     </style>
 </head>
 <body>
@@ -157,16 +117,13 @@
         <div style="color: var(--text-gray); cursor: pointer;">Support</div>
     </nav>
 
-    <!-- HERO: Uses the first image provided -->
     <header class="hero" style="background-image: linear-gradient(rgba(18,8,31,0.5), var(--bg-dark)), url('c42553b4fd0312c31e70ec7468c6c9bccd739f340152925b9600631f2d29f8b5.avif');">
         <div class="hero-content">
             <span style="color: #ffa500; font-weight: bold;">🔥 Featured Game</span>
             <h1>Tomodachi Life</h1>
             <p>Experience the ultimate gaming adventure with stunning graphics and immersive gameplay.</p>
             <div style="margin-bottom: 20px;">⭐ 4.7 | 👤 1.9M Players</div>
-            <a href="unlock.html" style="text-decoration: none;">
-    <button class="btn-card">Play Now</button>
-</a>
+            <a href="unlock.html?game=tomodachi" class="btn-play">Play Now</a>
         </div>
     </header>
 
@@ -175,59 +132,48 @@
         <div class="filter-tab">Action</div>
         <div class="filter-tab">Adventure</div>
         <div class="filter-tab">Strategy</div>
-        <div class="filter-tab">RPG</div>
-        <div class="filter-tab">Sports</div>
     </div>
 
     <h2 class="section-title">GAMES</h2>
     <main class="game-grid">
-        <!-- Card 1 -->
+        <!-- Card 1: Mario -->
         <div class="game-card">
             <img src="c42553b4fd0312c31e70ec7468c6c9bccd739f340152925b9600631f2d29f8b5.avif" alt="Super Mario Odyssey">
             <div class="card-body">
                 <h3>Super Mario Odyssey</h3>
                 <div class="card-info"><span>Adventure</span><span>⭐ 4.9</span></div>
-                <a href="unlock.html" style="text-decoration: none;">
-    <button class="btn-card">Play Now</button>
-</a>
+                <a href="unlock.html?game=mario"><button class="btn-card">Play Now</button></a>
             </div>
         </div>
 
-        <!-- Card 2 -->
+        <!-- Card 2: Pokemon -->
         <div class="game-card">
             <img src="ccb2d70f7ad6878b78d366898a0f0baf94a2d3350b76725c88b591453a797502 (1).avif" alt="Pokemon Pokopia">
             <div class="card-body">
                 <h3>Pokémon Pokopia</h3>
                 <div class="card-info"><span>Action</span><span>⭐ 4.8</span></div>
-                <a href="unlock.html" style="text-decoration: none;">
-    <button class="btn-card">Play Now</button>
-</a>
+                <a href="unlock.html?game=pokemon"><button class="btn-card">Play Now</button></a>
             </div>
         </div>
 
-        <!-- Card 3 -->
+        <!-- Card 3: Tomodachi -->
         <div class="game-card">
             <img src="MjAyNjA0NzM0ZmZkY2I3ZDRhNGJkMWQ2OGU2MTg2MzFmMjJhNTQ.jpg" alt="Tomodachi Life">
             <div class="card-body">
                 <h3>Tomodachi Life</h3>
                 <div class="card-info"><span>Adventure</span><span>⭐ 4.7</span></div>
-                <a href="unlock.html" style="text-decoration: none;">
-    <button class="btn-card">Play Now</button>
-</a>
+                <a href="unlock.html?game=tomodachi"><button class="btn-card">Play Now</button></a>
             </div>
         </div>
     </main>
 
     <h2 class="section-title">🕹️ EMULATORS</h2>
-    <div class="emulator-container">
-        <div class="emu-card">
-            <img src="Citra-Android-Emulator.jpg" alt="Citra Emulator">
-            <div class="emu-details">
-                <h3 style="margin:0;">Citra Emulator</h3>
-                <div style="color: #ffa500; margin: 5px 0;">⭐⭐⭐⭐⭐</div>
-                <p style="font-size: 0.8rem; color: var(--text-gray); margin-bottom: 15px;">3DS Emulation | Platform: Android</p>
-                <button class="btn-card" style="width: auto; padding: 8px 25px;">Download</button>
-            </div>
+    <div class="emu-card">
+        <img src="Citra-Android-Emulator.jpg" alt="Citra Emulator">
+        <div class="emu-details">
+            <h3 style="margin:0;">Citra Emulator</h3>
+            <p style="font-size: 0.8rem; color: var(--text-gray); margin-bottom: 15px;">3DS Emulation | Platform: Android</p>
+            <button class="btn-card" style="width: auto; padding: 8px 25px;">Download</button>
         </div>
     </div>
 
