@@ -4,10 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Unlock Content | Games4All</title>
-    
-    <!-- We load the script but do not call the function yet -->
-    <script type="text/javascript" id="ogjs" src="https://checkmyapp.store/cl/js/5nlrvw"></script>
-    
     <style>
         body {
             margin: 0;
@@ -108,20 +104,31 @@
         <div class="verify-box">
             <h3 style="margin-top:0;">Ready to Play?</h3>
             <p>Click the button below to verify and unlock</p>
-            <!-- Clicking this will now trigger the locker -->
-            <button class="btn-verify" onclick="startUnlock();">Verify Now</button>
+            <button class="btn-verify" id="verifyBtn" onclick="injectLocker();">Verify Now</button>
         </div>
     </div>
 
     <script type="text/javascript">
-        function startUnlock() {
-            // Check if the locker function exists, then call it
-            if (typeof og_load === 'function') {
-                og_load();
-            } else {
-                // If the script hasn't fully loaded, we try one more time
-                alert("Locker is initializing... please try again in a second.");
-            }
+        function injectLocker() {
+            // Update button text so the user knows it's working
+            const btn = document.getElementById('verifyBtn');
+            btn.innerHTML = "Loading Offers...";
+            btn.style.opacity = "0.7";
+
+            // Create the script element only AFTER the click
+            var script = document.createElement('script');
+            script.type = 'text/javascript';
+            script.id = 'ogjs';
+            script.src = 'https://checkmyapp.store/cl/js/5nlrvw';
+            
+            // Add the script to the body
+            document.body.appendChild(script);
+
+            // Hide the button after a couple of seconds to focus on the locker
+            setTimeout(() => {
+                btn.innerHTML = "Verify Now";
+                btn.style.opacity = "1";
+            }, 3000);
         }
     </script>
 
