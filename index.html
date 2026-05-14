@@ -73,11 +73,16 @@
 
         .btn-play:hover { background: #7b2cbf; transform: scale(1.05); }
 
-        .filters { padding: 2rem 5%; display: flex; gap: 12px; flex-wrap: wrap; }
-        .filter-tab { background: var(--bg-lighter); padding: 8px 20px; border-radius: 20px; font-size: 0.9rem; cursor: pointer; transition: 0.3s; }
-        .filter-tab.active, .filter-tab:hover { background: var(--accent-purple); }
+        /* Guide Section Styling */
+        .guide-container {
+            margin: 2rem 5%;
+            padding: 25px;
+            background: linear-gradient(90deg, #2d134d, #12081f);
+            border-left: 5px solid var(--accent-purple);
+            border-radius: 10px;
+        }
 
-        .section-title { padding: 0 5%; margin-bottom: 1rem; font-size: 1.5rem; }
+        .guide-title { color: var(--accent-purple); margin-top: 0; display: flex; align-items: center; gap: 10px; }
 
         .game-grid {
             display: grid;
@@ -87,11 +92,8 @@
         }
 
         .game-card { background: var(--bg-lighter); border-radius: 15px; overflow: hidden; transition: 0.3s; }
-        .game-card:hover { transform: translateY(-10px); }
         .game-card img { width: 100%; height: 200px; object-fit: cover; }
-        
         .card-body { padding: 20px; }
-        .card-info { display: flex; justify-content: space-between; color: var(--text-gray); font-size: 0.85rem; margin: 10px 0; }
         
         .btn-card {
             width: 100%;
@@ -102,7 +104,6 @@
             border-radius: 8px;
             cursor: pointer;
             font-weight: bold;
-            text-decoration: none;
         }
 
         .emu-card { display: flex; background: var(--bg-lighter); padding: 20px; border-radius: 15px; max-width: 500px; align-items: center; margin: 0 5% 5rem 5%; }
@@ -123,25 +124,27 @@
             <span style="color: #ffa500; font-weight: bold;">🔥 Featured Game</span>
             <h1>Tomodachi Life</h1>
             <p>Experience the ultimate gaming adventure with stunning graphics and immersive gameplay.</p>
-            <div style="margin-bottom: 20px;">⭐ 4.7 | 👤 1.9M Players</div>
             <a href="unlock.html?game=tomodachi" class="btn-play">Play Now</a>
         </div>
     </header>
 
-    <div class="filters">
-        <div class="filter-tab active">All Games</div>
-        <div class="filter-tab">Action</div>
-        <div class="filter-tab">Adventure</div>
-        <div class="filter-tab">Strategy</div>
-    </div>
+    <!-- NEW QUICK START GUIDE SECTION -->
+    <section class="guide-container">
+        <h3 class="guide-title">🚀 Quick Start Guide</h3>
+        <p>Follow these steps to start playing your favorite games:</p>
+        <ol style="line-height: 1.6;">
+            <li><strong>Download the Emulator:</strong> Scroll down to the <b>Emulators</b> section and download Citra first.</li>
+            <li><strong>Get Your Game:</strong> Choose a game from the list below and complete the verification to get the ROM file.</li>
+            <li><strong>Load & Play:</strong> Open the Citra Emulator and select the game ROM you just downloaded to start playing!</li>
+        </ol>
+    </section>
 
-    <h2 class="section-title">GAMES</h2>
+    <h2 class="section-title" style="padding: 0 5%;">GAMES</h2>
     <main class="game-grid">
         <div class="game-card">
             <img src="c42553b4fd0312c31e70ec7468c6c9bccd739f340152925b9600631f2d29f8b5.avif" alt="Super Mario Odyssey">
             <div class="card-body">
                 <h3>Super Mario Odyssey</h3>
-                <div class="card-info"><span>Adventure</span><span>⭐ 4.9</span></div>
                 <a href="unlock.html?game=mario" style="text-decoration:none;"><button class="btn-card">Play Now</button></a>
             </div>
         </div>
@@ -150,7 +153,6 @@
             <img src="ccb2d70f7ad6878b78d366898a0f0baf94a2d3350b76725c88b591453a797502 (1).avif" alt="Pokemon Pokopia">
             <div class="card-body">
                 <h3>Pokémon Pokopia</h3>
-                <div class="card-info"><span>Action</span><span>⭐ 4.8</span></div>
                 <a href="unlock.html?game=pokemon" style="text-decoration:none;"><button class="btn-card">Play Now</button></a>
             </div>
         </div>
@@ -159,24 +161,22 @@
             <img src="MjAyNjA0NzM0ZmZkY2I3ZDRhNGJkMWQ2OGU2MTg2MzFmMjJhNTQ.jpg" alt="Tomodachi Life">
             <div class="card-body">
                 <h3>Tomodachi Life</h3>
-                <div class="card-info"><span>Adventure</span><span>⭐ 4.7</span></div>
                 <a href="unlock.html?game=tomodachi" style="text-decoration:none;"><button class="btn-card">Play Now</button></a>
             </div>
         </div>
     </main>
 
-    <h2 class="section-title">🕹️ EMULATORS</h2>
-<div class="emu-card">
-    <img src="Citra-Android-Emulator.jpg" alt="Citra Emulator">
-    <div class="emu-details">
-        <h3 style="margin:0;">Citra Emulator</h3>
-        <p style="font-size: 0.8rem; color: var(--text-gray); margin-bottom: 15px;">3DS Emulation | Platform: Multi</p>
-        <!-- This link now goes directly to the site, bypassing unlock.html -->
-        <a href="https://citra-emulator.com/download" style="text-decoration:none;">
-            <button class="btn-card" style="width: auto; padding: 8px 25px;">Download</button>
-        </a>
+    <h2 class="section-title" style="padding: 0 5%;">🕹️ EMULATORS</h2>
+    <div class="emu-card">
+        <img src="Citra-Android-Emulator.jpg" alt="Citra Emulator">
+        <div class="emu-details">
+            <h3 style="margin:0;">Citra Emulator</h3>
+            <p style="font-size: 0.8rem; color: var(--text-gray); margin-bottom: 15px;">3DS Emulation | Platform: Multi</p>
+            <a href="https://citra-emulator.com/download" style="text-decoration:none;">
+                <button class="btn-card" style="width: auto; padding: 8px 25px;">Download</button>
+            </a>
+        </div>
     </div>
-</div>
 
 </body>
 </html>
